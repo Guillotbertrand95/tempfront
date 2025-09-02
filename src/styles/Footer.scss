@@ -1,0 +1,55 @@
+.footer {
+	background-color: #33658a;
+	color: #f0f0f0;
+	padding: 1.5rem 0;
+	font-family: "Cabinet Grotesk", sans-serif;
+	text-align: center;
+
+	.footer-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+
+		p {
+			margin: 0;
+			font-size: 0.9rem;
+		}
+
+		.footer-links {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+
+			a {
+				color: #f0f0f0;
+				text-decoration: none;
+				font-weight: 500;
+				transition: color 0.2s ease;
+
+				&:hover {
+					color: #55dde0;
+				}
+			}
+		}
+	}
+
+	// TABLETTE ET DESKTOP
+	@media (min-width: 600px) {
+		.footer-content {
+			flex-direction: row;
+			justify-content: space-between;
+			width: 80%;
+			margin: 0 auto;
+		}
+	}
+
+	// GRAND ÉCRAN
+	@media (min-width: 1024px) {
+		padding: 2rem 0;
+
+		.footer-content {
+			width: 70%;
+		}
+	}
+}

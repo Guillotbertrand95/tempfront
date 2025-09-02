@@ -1,0 +1,113 @@
+.performance-dashboard {
+	max-width: 800px;
+	margin: 20px auto;
+	border-radius: 5px;
+	font-family: "Cabinet Grotesk", sans-serif;
+	background-color: #55dde0;
+	padding: 1rem;
+
+	h2 {
+		text-align: center;
+		margin-bottom: 1rem;
+		color: #33658a;
+		font-size: 1.8rem;
+	}
+
+	.filters {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+		margin-bottom: 1rem;
+
+		select {
+			padding: 0.5rem;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			font-size: 0.9rem;
+		}
+	}
+
+	.period-buttons {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		margin-bottom: 1rem;
+
+		button {
+			padding: 0.5rem 1rem;
+			border: none;
+			border-radius: 5px;
+			background-color: #55dde0;
+			color: #33658a;
+			font-size: 0.9rem;
+			cursor: pointer;
+			transition: background-color 0.2s ease, color 0.2s ease;
+
+			&:hover {
+				background-color: #33658a;
+				color: white;
+			}
+
+			&.active {
+				background-color: #28a745;
+				color: white;
+			}
+		}
+	}
+
+	.stats {
+		margin-bottom: 1rem;
+
+		p {
+			margin: 0.2rem 0;
+			font-size: 0.95rem;
+		}
+	}
+
+	// ===== MEDIA QUERIES =====
+	@media (max-width: 768px) {
+		h2 {
+			font-size: 1.6rem;
+		}
+
+		.filters select {
+			font-size: 0.85rem;
+			padding: 0.4rem;
+		}
+
+		.period-buttons button {
+			font-size: 0.85rem;
+			padding: 0.4rem 0.8rem;
+		}
+
+		.stats p {
+			font-size: 0.9rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		padding: 0.8rem;
+
+		h2 {
+			font-size: 1.4rem;
+		}
+
+		.filters {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.period-buttons {
+			flex-direction: column;
+			gap: 0.5rem;
+
+			button {
+				width: 100%;
+			}
+		}
+
+		.stats p {
+			font-size: 0.85rem;
+		}
+	}
+}

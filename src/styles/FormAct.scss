@@ -1,0 +1,254 @@
+.activity-manager {
+	max-width: 600px;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	background-color: #55dde0;
+	border-radius: 5px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	font-family: Arial, sans-serif;
+	width: 90%; // responsive
+
+	h3 {
+		margin: 1.5rem 0 1rem;
+		font-size: 1.5rem;
+		color: white;
+		text-align: center;
+	}
+
+	.formulaire {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		&__group {
+			display: flex;
+			flex-direction: column;
+
+			label {
+				font-weight: 500;
+				margin-bottom: 0.3rem;
+				color: #555;
+			}
+
+			input,
+			select {
+				padding: 0.5rem 0.8rem;
+				border: 1px solid #ccc;
+				border-radius: 6px;
+				font-size: 1rem;
+				transition: border-color 0.2s;
+
+				&:focus {
+					border-color: #007bff;
+					outline: none;
+				}
+			}
+		}
+
+		button[type="submit"] {
+			padding: 0.8rem 1.2rem;
+			background-color: #007bff;
+			color: #fff;
+			font-weight: bold;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			margin-top: 0.5rem;
+
+			&:hover {
+				background-color: #0056b3;
+			}
+
+			&:active {
+				transform: scale(0.98);
+			}
+		}
+	}
+
+	.toggle-list {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 0.7rem 1rem;
+		margin: 1.2rem 0;
+		background-color: #28a745;
+		color: white;
+		font-weight: bold;
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background-color: #1e7e34;
+		}
+
+		&:active {
+			transform: scale(0.98);
+		}
+	}
+
+	.reset-all {
+		margin-top: 5px;
+		padding: 5px 10px;
+		background-color: #33658a;
+		color: white;
+		border-radius: 5px;
+
+		&:hover {
+			background-color: #55dde0;
+			color: #33658a;
+		}
+	}
+
+	.activities-container {
+		.activity-list {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+			gap: 1rem;
+
+			.activity-card {
+				background-color: #fff;
+				padding: 1rem;
+				border-radius: 8px;
+				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+				cursor: pointer;
+				transition: all 0.2s ease;
+
+				&:hover {
+					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+					transform: translateY(-2px);
+				}
+
+				p {
+					margin: 0.3rem 0;
+					font-size: 0.95rem;
+
+					strong {
+						color: #030101;
+					}
+				}
+			}
+		}
+	}
+}
+
+.recent-activities {
+	margin-top: 2rem;
+
+	h3 {
+		margin-bottom: 1rem;
+		font-size: 1.3rem;
+		color: #333;
+	}
+
+	.activity-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+
+		.activity-btn {
+			display: flex;
+			justify-content: center;
+			padding: 0.5rem 1rem;
+			background-color: #28a745;
+			color: black;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			font-weight: 500;
+			transition: background-color 0.2s;
+
+			&:hover {
+				background-color: #1e7e34;
+			}
+
+			&:active {
+				transform: scale(0.97);
+			}
+		}
+	}
+}
+
+.activity-card {
+	display: flex;
+	flex-direction: row;
+	color: #030101;
+	gap: 5px;
+}
+
+.delete-btn {
+	background-color: #55dde0;
+	border: none;
+	color: #ffffff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.edit-btn {
+	background-color: #33658a;
+	border: none;
+	color: #ffffff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+
+	&:hover {
+		background-color: #55dde0;
+		color: #33658a;
+	}
+
+	&:active {
+		transform: scale(0.97);
+	}
+}
+
+// ===== MEDIA QUERIES =====
+@media (max-width: 768px) {
+	.activity-manager {
+		width: 95%;
+		padding: 1rem;
+	}
+
+	.formulaire input,
+	.formulaire select,
+	.dynamic-form__buttons button {
+		font-size: 0.95rem;
+		padding: 0.5rem 0.9rem;
+	}
+
+	.activities-container .activity-list {
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	}
+}
+
+@media (max-width: 480px) {
+	.activity-manager {
+		width: 98%;
+		padding: 0.8rem;
+	}
+
+	.formulaire input,
+	.formulaire select,
+	.dynamic-form__buttons button {
+		font-size: 0.9rem;
+		padding: 0.5rem 0.8rem;
+	}
+
+	.activities-container .activity-list {
+		grid-template-columns: 1fr; // activité une par ligne
+	}
+
+	.activity-buttons {
+		flex-direction: column;
+		gap: 0.5rem;
+
+		.activity-btn {
+			width: 100%;
+		}
+	}
+}
