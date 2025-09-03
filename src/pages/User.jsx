@@ -25,9 +25,10 @@ export default function User() {
 			if (!token) return;
 			try {
 				const res = await axios.get(
-					`${process.env.REACT_APP_API_URL}/api/profile`,
+					`${import.meta.env.VITE_API_URL}/api/profile`,
 					{
 						headers: { Authorization: `Bearer ${token}` },
+						withCredentials: true,
 					}
 				);
 				const profile = res.data;
@@ -54,6 +55,7 @@ export default function User() {
 				data,
 				{
 					headers: { Authorization: `Bearer ${token}` },
+					withCredentials: true,
 				}
 			);
 			alert("Profil mis à jour ✅");

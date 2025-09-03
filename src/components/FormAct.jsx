@@ -53,6 +53,7 @@ export default function ActivityManager() {
 				`${import.meta.env.VITE_API_URL}/api/activities`,
 				{
 					headers: { Authorization: `Bearer ${token}` },
+					withCredentials: true,
 				}
 			);
 			setActivities(res.data);
@@ -89,6 +90,7 @@ export default function ActivityManager() {
 					formData,
 					{
 						headers: { Authorization: `Bearer ${token}` },
+						withCredentials: true,
 					}
 				);
 				setEditingId(null);
@@ -98,6 +100,7 @@ export default function ActivityManager() {
 					formData,
 					{
 						headers: { Authorization: `Bearer ${token}` },
+						withCredentials: true,
 					}
 				);
 			}
@@ -140,6 +143,7 @@ export default function ActivityManager() {
 				`${import.meta.env.VITE_API_URL}/api/activities`,
 				{
 					headers: { Authorization: `Bearer ${token}` },
+					withCredentials: true,
 				}
 			);
 			setActivities([]);
@@ -157,6 +161,7 @@ export default function ActivityManager() {
 				`${import.meta.env.VITE_API_URL}/api/activities/${id}`,
 				{
 					headers: { Authorization: `Bearer ${token}` },
+					withCredentials: true,
 				}
 			);
 			setActivities(activities.filter((act) => act._id !== id));
