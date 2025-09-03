@@ -9,14 +9,14 @@ export default function Footer() {
 				<p>© 2025 Bertrand – Tableau de bord sportif</p>
 				<div className="footer-links">
 					<a
-						href="https://github.com/tonprofil"
+						href="https://github.com/Guillotbertrand95"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						GitHub
 					</a>
 					<a
-						href="https://linkedin.com/in/tonprofil"
+						href="https://www.linkedin.com/in/bertrand-guillot-618a211a1/"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
