@@ -71,6 +71,7 @@ export default function User() {
 		try {
 			await axios.delete(`${import.meta.env.VITE_API_URL}/api/profile`, {
 				headers: { Authorization: `Bearer ${token}` },
+				withCredentials: true,
 			});
 			localStorage.removeItem("token");
 			localStorage.removeItem("user");
