@@ -11,7 +11,7 @@ export default function Board() {
 	const fetchActivities = async () => {
 		try {
 			const res = await axios.get(
-				`${process.env.REACT_APP_API_URL}/api/activities`,
+				`${import.meta.env.VITE_API_URL}/api/activities`,
 				{
 					headers: { Authorization: `Bearer ${token}` },
 				}
@@ -32,7 +32,7 @@ export default function Board() {
 	const handleAddActivity = async (data) => {
 		try {
 			await axios.post(
-				`${process.env.REACT_APP_API_URL}/api/activities`,
+				`${import.meta.env.VITE_API_URL}/api/activities`,
 				data,
 				{
 					headers: { Authorization: `Bearer ${token}` },

@@ -50,7 +50,7 @@ export default function ActivityManager() {
 	const fetchActivities = async () => {
 		try {
 			const res = await axios.get(
-				"http://localhost:5000/api/activities",
+				`${import.meta.env.VITE_API_URL}/api/activities`,
 				{
 					headers: { Authorization: `Bearer ${token}` },
 				}
@@ -83,7 +83,9 @@ export default function ActivityManager() {
 		try {
 			if (editingId) {
 				await axios.put(
-					`http://localhost:5000/api/activities/${editingId}`,
+					`${
+						import.meta.env.VITE_API_URL
+					}/api/activities/${editingId}`,
 					formData,
 					{
 						headers: { Authorization: `Bearer ${token}` },
@@ -92,7 +94,7 @@ export default function ActivityManager() {
 				setEditingId(null);
 			} else {
 				await axios.post(
-					"http://localhost:5000/api/activities",
+					`${import.meta.env.VITE_API_URL}/api/activities`,
 					formData,
 					{
 						headers: { Authorization: `Bearer ${token}` },
@@ -134,9 +136,12 @@ export default function ActivityManager() {
 		if (!confirm) return;
 
 		try {
-			await axios.delete("http://localhost:5000/api/activities", {
-				headers: { Authorization: `Bearer ${token}` },
-			});
+			await axios.delete(
+				`${import.meta.env.VITE_API_URL}/api/activities`,
+				{
+					headers: { Authorization: `Bearer ${token}` },
+				}
+			);
 			setActivities([]);
 			alert("Toutes vos activités ont été supprimées !");
 		} catch (err) {
@@ -149,7 +154,7 @@ export default function ActivityManager() {
 			return;
 		try {
 			await axios.delete(
-				`${process.env.REACT_APP_API_URL}/api/activities/${id}`,
+				`${import.meta.env.VITE_API_URL}/api/activities/${id}`,
 				{
 					headers: { Authorization: `Bearer ${token}` },
 				}

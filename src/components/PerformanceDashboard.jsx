@@ -30,7 +30,7 @@ export default function PerformanceDashboard({ goals }) {
 		const fetchActivities = async () => {
 			try {
 				const res = await axios.get(
-					`${process.env.REACT_APP_API_URL}/api/activities`,
+					`${import.meta.env.VITE_API_URL}/api/activities`,
 					{
 						headers: { Authorization: `Bearer ${token}` },
 					}

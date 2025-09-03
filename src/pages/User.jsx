@@ -50,7 +50,7 @@ export default function User() {
 	const handleSubmit = async (data) => {
 		try {
 			await axios.put(
-				`${process.env.REACT_APP_API_URL}/api/profile`,
+				`${import.meta.env.VITE_API_URL}/api/profile`,
 				data,
 				{
 					headers: { Authorization: `Bearer ${token}` },
@@ -67,7 +67,7 @@ export default function User() {
 		if (!window.confirm("⚠️ Supprimer votre compte ?")) return;
 
 		try {
-			await axios.delete(`${process.env.REACT_APP_API_URL}/api/profile`, {
+			await axios.delete(`${import.meta.env.VITE_API_URL}/api/profile`, {
 				headers: { Authorization: `Bearer ${token}` },
 			});
 			localStorage.removeItem("token");
